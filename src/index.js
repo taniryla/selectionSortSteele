@@ -11,11 +11,11 @@ function selectionSort(arr) {
     console.log(newMin, arr[i]);
 
     for (let j = i + 1; j < arr.length; j++) {
-      if (newMin > arr[j + 1]) {
-        newMin = arr[j + 1];
+      if (newMin > arr[j]) {
+        newMin = arr[j];
         temp = newMin;
-        newMin = arr[j + 1];
-        arr[j + 1] = newMin;
+        newMin = arr[j];
+        arr[j] = newMin;
       }
       console.log(newMin, arr[j]);
     }

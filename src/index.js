@@ -1,9 +1,9 @@
 function selectionSort(arr) {
   let newMin;
-  for (let i = 0; i < arr.length; i++) {
-    let firstVal = arr[i][0];
-    if (firstVal > arr[i + 1]) {
-      newMin = arr[i + 1];
+  let firstVal = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    if (firstVal > arr[i]) {
+      newMin = arr[i];
       let temp = newMin;
       newMin = firstVal;
       firstVal = temp;

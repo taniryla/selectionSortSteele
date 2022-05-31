@@ -1,17 +1,24 @@
 function selectionSort(arr) {
-  let firstVal = arr[0];
+  let newMin;
   for (let i = 0; i < arr.length; i++) {
-    if (firstVal > arr[i]) {
-      let newMin = arr[i];
-    }
-    if (newMin > arr[i]) {
-      newMin = arr[i];
-    }
-    if (arr.length) {
-      let temp = newMin;
-      newMin = firstVal;
-      firstVal = temp;
+    let firstVal = arr[i][0];
+    for (let j = i + 1; j < arr.length; j++) {
+      if (firstVal > arr[j]) {
+        newMin = arr[j];
+        let temp = newMin;
+        newMin = firstVal;
+        firstVal = temp;
+      }
+      if (arr[j] < newMin) {
+        newMin = arr[j];
+        temp = newMin;
+        newMin = arr[i];
+        arr[i] = newMin;
+      }
+      console.log(newMin, arr[j]);
     }
   }
   return arr;
 }
+
+selectionSort([4, 6, 2, 7, 3, 9]);

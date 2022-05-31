@@ -1,21 +1,20 @@
 function selectionSort(arr) {
   let newMin;
   let firstVal = arr[0];
-  for (let i = 1; i < arr.length; i++) {
-    if (firstVal > arr[i]) {
-      newMin = arr[i];
-      let temp = newMin;
-      newMin = firstVal;
+  console.log(firstVal);
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] < firstVal) {
+      let temp = arr[i];
+      arr[i] = firstVal;
       firstVal = temp;
     }
-    console.log(newMin, arr[i]);
+    console.log(firstVal, arr[i]);
 
     for (let j = i + 1; j < arr.length; j++) {
-      if (newMin > arr[j]) {
-        newMin = arr[j];
-        temp = newMin;
-        newMin = arr[j];
-        arr[j] = newMin;
+      if (arr[j] < arr[i]) {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
       }
       console.log(newMin, arr[j]);
     }
